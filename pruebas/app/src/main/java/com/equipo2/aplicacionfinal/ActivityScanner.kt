@@ -79,6 +79,7 @@ class ActivityScanner : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error al iniciar el scanner", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, ActivityMenuPrincipal::class.java))
+                finish()
             }
 
 
@@ -97,6 +98,10 @@ class ActivityScanner : AppCompatActivity() {
             .addOnFailureListener {
                 println("Error al verificar módulo")
             }
+        fun onBackPressed() {
+            startActivity(Intent(this, ActivityMenuPrincipal::class.java))
+            finish()
+        }
 
     }
 

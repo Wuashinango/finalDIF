@@ -20,6 +20,7 @@ class ActivityScannerCorrecto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanner_correcto)
 
+
         val curp = intent.getStringExtra("curp")
         val apellido1 = intent.getStringExtra("apellido1")
         val apellido2 = intent.getStringExtra("apellido2")
@@ -113,6 +114,7 @@ class ActivityScannerCorrecto : AppCompatActivity() {
             Log.d("ActivityScannerCorrecto", "Donativo: $donativo")
             finish()
             startActivity(Intent(this, ActivityScanner::class.java))
+
         }
         volverMenu.setOnClickListener{
             Log.d("ActivityScannerCorrecto", "Datos recibidos:")
@@ -130,4 +132,5 @@ class ActivityScannerCorrecto : AppCompatActivity() {
             startActivity(Intent(this, ActivityMenuPrincipal::class.java))
         }
     }
+
 }

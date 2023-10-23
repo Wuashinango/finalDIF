@@ -16,6 +16,9 @@ class ActivityInventario : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        fun onBackPressed() {
+            startActivity(Intent(this, ActivityMenuPrincipal::class.java))
+        }
 
     }
 }
