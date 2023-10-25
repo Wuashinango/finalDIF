@@ -17,11 +17,27 @@ app.use(cors());
 app.disable('x-powered-by');
 
 
-app.set('port', port);
+/*
+* RUTAS DESDE LA CARPETA ROUTES
+*/
+const usuario = require('./routes/usuarioRoutes');
 
+app.set('port', port);
 server.listen(3000, '10.48.103.155' || 'localhost', function(){
     console.log('Aplicacion de NodeJS ' + process.pid + ' Iniciada...')
 });
+
+//LLAMAR A LAS RUTAS
+
+usuario(app);
+
+
+
+
+
+
+
+
 
 //RUTAS TEST
 app.get('/', (req, res) => { 
@@ -40,9 +56,7 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = {
-    app: app
+    app: app,
+    server: server,
 }
 
-// 200 - ES UN RESPUESTA EXITOSA
-// 404 - SIGNIFICA QUE LA URL NO EXISTE
-// 500 - ERROR INTERNO DEL SERVIDOR
