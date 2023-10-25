@@ -3,6 +3,7 @@ package com.equipo2.aplicacionfinal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         if (isValidUsuario(usuario, contrasena)) {
             Toast.makeText(this,"Iniciando...", Toast.LENGTH_LONG).show()
+            Log.d("RevisarMensajes", "Datos recibidos: $usuario")
+            Log.d("RevisarMensajes", "Datos recibidos: $contrasena")
+
             val intent = Intent(this, ActivityMenuPrincipal::class.java)
             startActivity(intent)
             finish()
